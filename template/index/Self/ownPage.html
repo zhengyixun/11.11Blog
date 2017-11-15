@@ -1,0 +1,110 @@
+{include file=$header}
+    <link rel="stylesheet" href="{CSS_URL}/bootstrap.css">
+    <link rel="stylesheet" href="{CSS_URL}/header.css">
+    <link rel="stylesheet" href="{CSS_URL}/ownPage.css">
+    <link rel="stylesheet" href="{CSS_URL}/write.css">
+    <link rel="stylesheet" href="{ICONFONTS_URL}/iconfont.css">
+    <script src="{JS_URL}/ownPage.js"></script>
+<main>
+    <div class="headBox"></div>
+    <div class="ownInfo">
+        <div class="ownInfoTop">
+            <!--用户头像-->
+            <img src="{$result['photo']}" alt="">
+            <h3>{$result['uname']}</h3>
+            <ul>
+                <li>
+                  <span>{$result2}</span><br>
+                  <span>关注></span>
+                </li>
+                <li>
+                    <span>{$result1}</span><br>
+                    <span>粉丝></span>
+                </li>
+                <li>
+                    <span>100</span><br>
+                    <span>文章></span>
+                </li>
+                <li>
+                    <span>100</span><br>
+                    <span>字数></span>
+                </li>
+                <li>
+                    <span>100</span><br>
+                    <span>收藏喜欢></span>
+                </li>
+            </ul>
+        </div>
+        <div class="ownInfoBot">
+            <div class="ownInfoBotSon">
+                <div class="iconfont icon-wenzhang"></div>
+                <span>文章</span>
+            </div>
+            <div class="ownInfoBotSon">
+                <div class="iconfont icon-dongtai"></div>
+                <span>动态</span>
+            </div>
+            <div class="ownInfoBotSon">
+                <div class="iconfont icon-pinglun"></div>
+                <span>最新评论</span>
+            </div>
+            <div class="ownInfoBotSon">
+                <div class="iconfont icon-remen"></div>
+                <span>热门</span>
+            </div>
+        </div>
+        <div class="rightCon">
+            <div class="rightConSon">
+                <div class="iconfont icon-quanbufenlei"></div>
+                <span>我关注的文章</span>
+            </div>
+            <div class="rightConSon">
+                <div class="iconfont icon-woxihuande"></div>
+                <span>我喜欢的文章</span>
+            </div>
+            <div class="createCon">
+                <span>我创建的专题</span>
+                <h5>+创建一个新专题</h5>
+            </div>
+        </div>
+    </div>
+    <!--动态内容-->
+    <div class="dongCon">
+        <div class="dongConSon" style="display: block">
+            <!--写的文章-->
+            {if $data}
+            {foreach $data as $v}
+            <div class="dongConSonList">
+                <div class="dongConSonListTop">
+                    <img src="{$v['thumb']}" alt="">
+                    <span>{$v['uname']}</span>
+                    <span>喜欢了文章</span>
+                    <span>{$v['condate']}</span>
+                </div>
+                <h4><a href="index.php?m=index&f=index&a=blogCon&cid={$v['cid']}">{$v['ctitle']}</a></h4>
+                <p>{substr($v['ccon'],0,100)}</p>
+                <h6>爱来不来鸟</h6>
+                <div class="iconfont icon-remen"></div>
+                <h6 class="num">100</h6>
+                <div class="iconfont icon-pinglun"></div>
+                <h6 class="num">100</h6>
+                <div class="iconfont icon-xihuan"></div>
+                <h6 class="num">100</h6>
+                <div class="rightImgBox">
+                    <img src="{$v['thumb']}" alt="">
+                </div>
+            </div>
+            {/foreach}
+            {else}
+            <div class="dongConSonList">
+                <h4>您还没有发表过文章哦</h4>
+            </div>
+            {/if}
+        </div>
+        <div class="dongConSon" style="display: none">动态</div>
+        <div class="dongConSon" style="display: none">最新评论</div>
+        <div class="dongConSon" style="display: none">热门</div>
+    </div>
+</main>
+</body>
+</html>

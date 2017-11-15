@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{CSS_URL}/bootstrap.css">
+    <!--<script src="{JS_URL}/wangEditor.min.js"></script>-->
+    <script type="text/javascript" charset="utf-8" src="{PLUGIN_URL}/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="{PLUGIN_URL}/ueditor/ueditor.all.min.js"> </script>
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <script type="text/javascript" charset="utf-8" src="{PLUGIN_URL}/ueditor/lang/zh-cn/zh-cn.js"></script>
+    <script src="{JS_URL}/up.js"></script>
+    <title>writeCon</title>
+</head>
+<style>
+    form{
+        margin-top: 30px;
+    }
+    .ueditor{
+        width: 645px;height: 350px;margin-left: 168px;
+    }
+    #text-elem774320427370786{
+        margin-left: 20px;
+    }
+    .sub{
+        margin: 50px 0;
+    }
+    .concon{
+        display: block;margin: 20px auto;text-align: center;font-size: 25px;font-weight: 800;
+    }
+    .input-group{
+        width: 650px;margin-left: 168px;margin-bottom: 20px;
+    }
+</style>
+<body>
+<form class="form-horizontal" method="post">
+    <!--&lt;!&ndash;cateid&ndash;&gt;-->
+    <!--<input type="hidden" name="cateid" value="{$cateid}">-->
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">文章名称</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="inputEmail3" value="{$result['ctitle']}" name="ctitle">
+        </div>
+    </div>
+    <div>
+        <span class="concon">内容</span>
+        <div  class="ueditor">
+            <div id="editor" name="ccon" type="text/plain" style="height: 250px"></div>
+            <!--隐藏域-->
+            <textarea name="" id="" cols="30" rows="10" hidden>
+              {$result['ccon']}
+            </textarea>
+        </div>
+    </div>
+    <!--显示原始头像-->
+    {if $result['thumb']}
+    <div class="form-group" style="position: relative">
+        <!--<h4 style="display: block;margin-left: 168px">原始头像</h4>-->
+        <img src="{$result['thumb']}" alt="" style="width: 50px;height: 50px;margin-left: 185px">
+        <div class="delBtn" cid="{$result['cid']}" style="position: absolute;left: 250px;top:10px;cursor: pointer">清除头像</div>
+    </div>
+    {/if}
+    <div class="form-group">
+        <label class="col-sm-2 control-label">上传头像</label>
+        <div class="col-sm-8 parent">
+
+        </div>
+        <input type="hidden" name="thumb" class="form-control btnn">
+    </div>
+    <!--价格-->
+    <div class="input-group">
+        <span class="input-group-addon">￥</span>
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" value="{$result['price']}" name="price">
+    </div>
+    <!--推荐位-->
+    <div class="form-group">
+        <label class="col-sm-2 control-label">推荐位</label>
+        {foreach $result1 as $v}
+        {if strpos($result['posid'],$v['pid'])!==false}
+        <input type="checkbox" name="pid[]" value="{$v['pid']}" checked>{$v['pname']}
+        {else}
+        <input type="checkbox" name="pid[]" value="{$v['pid']}">{$v['pname']}
+        {/if}
+        {/foreach}
+    </div>
+    <input type="hidden" name="cid" value="{$cid}">
+    <input type="hidden" name="cquanxian" value="{$result['cquanxian']}">
+    <input type="hidden" name="state" value="{$result['state']}">
+    <input type="hidden" name="cateid" value="{$result['cateid']}">
+    <input type="hidden" name="uid" value="{$result['uid']}">
+    <div class="form-group sub">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default" formaction="index.php?m=index&f=write&a=editWriteConCon&cid={$cid}">确认修改</button>
+        </div>
+    </div>
+</form>
+</body>
+<script src="{JS_URL}/jquery-3.2.1.js"></script>
+<script>
+$(function(){
+    var ue = UE.getEditor('editor', {
+        toolbars: [
+            ['fullscreen', 'undo', 'redo'],
+            ['bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'simpleupload', 'selectall', 'cleardoc']
+        ],
+    });
+    ue.addListener( 'ready', function( editor ) {
+        UE.getEditor('editor').setContent(document.querySelector("textarea").value);
+    });
+
+    //上传图片
+    var upll=new upload();
+    var btnn=document.querySelector('.btnn');
+    var parent=document.querySelector('.parent');
+    upll.createView({ parent });
+    upll.upl("index.php?m=index&f=write&a=uploads",function(e){
+        var str=e.join(';');
+        btnn.value +=str;
+    });
+    //点击删除头像
+    $(".delBtn").click(function(){
+        var cid=$(".delBtn").attr("cid");
+        $.ajax({
+            url:"index.php?m=index&f=write&a=delThumb",
+            type:"post",
+            data:{ cid:$(".delBtn").attr("cid") },
+            success:function(e){
+                if(e=="ok"){
+                    $(".delBtn").parent().remove();   //视图上移除
+                    alert("删除成功");
+                    location.href="index.php?m=index&f=write&a=editWriteCon&cid="+cid;
+                }else{
+                    alert("删除失败");
+                }
+            }
+        })
+    })
+});
+</script>
+</html>

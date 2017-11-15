@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{CSS_URL}/bootstrap.css">
+    <!--<script src="{JS_URL}/wangEditor.min.js"></script>-->
+    <script type="text/javascript" charset="utf-8" src="{PLUGIN_URL}/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="{PLUGIN_URL}/ueditor/ueditor.all.min.js"> </script>
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <script type="text/javascript" charset="utf-8" src="{PLUGIN_URL}/ueditor/lang/zh-cn/zh-cn.js"></script>
+    <script src="{JS_URL}/up.js"></script>
+    <title>writeCon</title>
+</head>
+<style>
+    form{
+        margin-top: 30px;
+    }
+    .ueditor{
+        width: 645px;height: 350px;margin-left: 168px;
+    }
+    #text-elem774320427370786{
+        margin-left: 20px;
+    }
+    .sub{
+        margin: 50px 0;
+    }
+    .concon{
+        display: block;margin: 20px auto;text-align: center;font-size: 25px;font-weight: 800;
+    }
+    .input-group{
+        width: 650px;margin-left: 168px;margin-bottom: 20px;
+    }
+</style>
+<body>
+<form class="form-horizontal" method="post">
+    <!--cateid-->
+    <input type="hidden" name="cateid" value="{$cateid}">
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">文章名称</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="请输入文章名称" name="ctitle">
+        </div>
+    </div>
+    <div class="">
+        <span class="concon">内容</span>
+        <div  class="ueditor">
+            <div id="editor" name="con" type="text/plain" style="height: 250px"></div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">上传头像</label>
+        <div class="col-sm-8 parent">
+
+        </div>
+        <input type="hidden" name="thumb" class="form-control btnn">
+    </div>
+    <!--价格-->
+    <div class="input-group">
+        <span class="input-group-addon">￥</span>
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="请输入文章价格" name="price">
+    </div>
+    <!--推荐位-->
+    <div class="form-group">
+        <label class="col-sm-2 control-label">推荐位</label>
+        {foreach $result1 as $v}
+        <input type="checkbox" name="pid[]" value="{$v['pid']}">{$v['pname']}
+        {/foreach}
+    </div>
+    <div class="form-group sub">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default" formaction="index.php?m=index&f=write&a=add&state=2">发布</button>
+            <button type="submit" class="btn btn-default" formaction="index.php?m=index&f=write&a=add&state=1">保存</button>
+        </div>
+    </div>
+</form>
+</body>
+<script>
+    var ue = UE.getEditor('editor', {
+        toolbars: [
+            ['fullscreen', 'undo', 'redo'],
+            ['bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'simpleupload', 'selectall', 'cleardoc']
+        ],
+    });
+
+    //上传图片
+    var upll=new upload();
+    var btnn=document.querySelector('.btnn');
+    var parent=document.querySelector('.parent');
+    upll.createView({ parent });
+    upll.upl("index.php?m=index&f=write&a=uploads",function(e){
+        var str=e.join(';');
+        btnn.value +=str;
+    });
+</script>
+</html>

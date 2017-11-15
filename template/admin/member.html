@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{CSS_URL}/bootstrap.css">
+    <link rel="stylesheet" href="{JS_URL}/jquery-3.2.1.js">
+    <title>查看管理员</title>
+</head>
+<style>
+    a{
+        text-decoration: none;color: #fff;
+    }
+    a:hover{
+        text-decoration: none;color: #fff;
+    }
+</style>
+<body>
+<div class="container">
+<table class="table table-bordered">
+    <tr>
+        <th>用户名</th>
+        <th>角色</th>
+        <th>操作</th>
+    </tr>
+    {foreach $result as $v}
+    <tr>
+        <td>{$v['aname']}</td>
+        <td>{$v['lname']}</td>
+
+        <td>
+            <button type="button" class="btn btn-info">
+                <a href="index.php?m=admin&f=member&a=editAdmin&aid={$v['aid']}">编辑</a>
+            </button>
+            <button type="button" class="btn btn-danger">
+                <a href="index.php?m=admin&f=member&a=delAdmin&aid={$v['aid']}">删除</a>
+            </button>
+        </td>
+    </tr>
+    {/foreach}
+</table>
+</div>
+</body>
+</html>

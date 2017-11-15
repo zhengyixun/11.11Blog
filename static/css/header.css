@@ -1,0 +1,24 @@
+a:hover{
+    text-decoration: none;
+}
+header span{
+    line-height: 50px;font-size: 16px;color: #EA6F5A;display: block;float: left;
+}
+.search{
+    width: 350px;height: 40px;margin-top: 5px;border-radius: 20px;background: #eee;margin-left: 20px;
+    float: left;
+}
+.search input{
+    outline: none;box-shadow: none; width: 350px;height: 40px;border-radius: 20px;line-height: 40px;background: none;border: 0;padding-left: 15px;color: #9F9F9F;
+}
+.reg{
+    height: 40px;width: 80px;border-radius: 20px;border: 1px solid #EA6F5A;box-sizing: border-box;float: left;margin-top: 5px;margin-left: 20px;
+}
+.reg a,.write a{
+    display: block;width: 100%;height: 100%; color: #EA6F5A;text-align: center;line-height: 35px;
+}
+.write{
+    background: #EA6F5A;
+}
+.write a{color: #fff}
+

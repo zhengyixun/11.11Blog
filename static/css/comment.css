@@ -1,0 +1,18 @@
+.commentCon{
+    overflow: hidden;
+}
+.comCon{
+    width: 100%;height: 200px;border: 1px solid #000;
+}
+.replayList{
+    margin-left: 30px;width: 100%;height: auto;border-left: 2px solid #ccc;margin-top: 10px;padding-left: 15px;
+}
+.replayCon{
+    margin-top: 10px;
+}
+.inp{
+    width: 100%;height: 0;
+}
+textarea{
+    resize: none;width: 530px;height: 80px;border-radius: 3px;margin-bottom: 5px;padding: 5px;
+}

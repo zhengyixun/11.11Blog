@@ -1,0 +1,19 @@
+*{
+    margin: 0;padding: 20px;text-decoration: none;list-style: none;
+}
+html,body{
+    background: #f0f0f0;
+}
+.table > tbody > tr > td{
+    text-align: center;
+    padding: 15px 0;
+}
+.btn{
+    padding: 2px 0px;
+}
+.btn>a{
+    color: #fff;
+}
+.btn>a:hover{
+    color: #fff;text-decoration: none;
+}

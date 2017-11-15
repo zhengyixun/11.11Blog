@@ -1,0 +1,70 @@
+*{
+    margin: 0;padding: 0;text-decoration: none;list-style: none;
+}
+a:hover{
+    text-decoration: none;
+}
+header{
+    width: 100%;height: 50px;border-bottom: 1px solid #eee;box-sizing: border-box;position: fixed;
+    top:0;left: 0;background: #fff;z-index: 999;
+}
+.headLeft{
+    width: 183px;height: 100%;color: #EA6F5A;text-align: center;line-height: 50px;font-size: 30px;
+    float: left;
+}
+.headBox{
+    width: 100%;height: 50px;
+}
+.write>#tex{
+    line-height: 38px;
+}
+#Img,#Img1{
+    display: block;width:82px;height: 49px;margin-top: -6px;margin-left: -2px;background: #fff;position: relative;
+}
+#Img>img,#Img1>img{
+    width: 40px;height: 40px;border: 1px solid #ccc;border-radius: 50%;margin-top: 4px;float: left;margin-left: 10px;
+}
+.angel{
+    width: 0;height: 0;border-top: 5px solid #999;float: left;margin-top: 22px;border-bottom:5px solid #fff; border-left:5px solid #fff; border-right:5px solid #fff;margin-left: 5px;
+}
+header>.do{
+    margin-right: 40px;
+}
+.login{
+    color: #9f9c99;float: left;margin-left: 220px;
+}
+.login>a{
+    color: #9f9c99;display: block;width: 80px;height: 100%;overflow: hidden;text-align: center;
+}
+main{
+    width: 1000px;height: auto;margin: 0 auto;position: relative;
+}
+.headBox{
+    width: 100%;height: 50px;
+}
+/*以上是登陆后的css样式*/
+/*登陆后的下拉列表*/
+.lists{
+    position: absolute;top:50px;right: 100px;box-sizing: border-box;width: 160px;border: 1px solid #ccc;box-sizing: border-box;
+}
+.lists>li{
+    height: 50px;width: 140px;background: #fff;padding-left: 20px;
+}
+
+.lists>li>a{width: 100%;height: 100%}
+.lists>li>a>.iconfont{
+    color: #EA6F5A;margin-top: 5px;margin-right: 20px;float: left;
+}
+.lists>li>a>span{
+    color: #333;font-weight: 400;
+}
+
+.btn-success{
+    margin: 30px 0;position: fixed;top:50px;left:120px;
+}
+.do>a{
+    color: #EA6F5A;
+}
+.do>a:hover{
+    color: #EA6F5A;text-decoration: none;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>管理员角色</title>
+    <link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/dpl.css" rel="stylesheet">
+    <link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/bui.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="demo-content">
+    <div class="row">
+        <div class="span16">
+            <div id="grid">
+
+            </div>
+        </div>
+    </div>
+    <!-- 初始隐藏 dialog内容 -->
+    <div id="content" class="hide">
+        <form class="form-horizontal" method="post" action="">
+            <div class="row">
+                <div class="control-group span8">
+                    <label class="control-label"><s>*</s>管理员角色：</label>
+                    <div class="controls">
+                        <input type="hidden" name="lid">
+                        <input name="lname" type="text" data-rules="{ required:true }" class="input-normal control-text">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="control-group span12">
+                    <label class="control-label">留言权限：</label>
+                    <div class="controls bui-form-field-select" data-select="{ multipleSelect:true,items : [{ text:'增',value:'1' },{ text:'删',value:'2' },{ text:'改',value:'3' },{ text:'查',value:'4' }] }">
+                        <input type="hidden" name="messagenum">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="control-group span12">
+                    <label class="control-label">内容权限：</label>
+                    <div class="controls bui-form-field-select" data-select="{ multipleSelect:true,items : [{ text:'增',value:'1' },{ text:'删',value:'2' },{ text:'改',value:'3' },{ text:'查',value:'4' }] }">
+                        <input type="hidden" name="connum">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="control-group span12">
+                    <label class="control-label">管理员权限：</label>
+                    <div class="controls bui-form-field-select" data-select="{ multipleSelect:true,items : [{ text:'增',value:'1' },{ text:'删',value:'2' },{ text:'改',value:'3' },{ text:'查',value:'4' }] }">
+                        <input type="hidden" name="adminnum">
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+
+
+    <script src="http://g.tbcdn.cn/fi/bui/jquery-1.8.1.min.js"></script>
+    <script src="http://g.alicdn.com/bui/seajs/2.3.0/sea.js"></script>
+    <script src="http://g.alicdn.com/bui/bui/1.1.21/config.js"></script>
+    <!-- script start -->
+    <script type="text/javascript" src="{JS_URL}/showRole.js"></script>
+    <!-- script end -->
+</div>
+</body>
+</html>

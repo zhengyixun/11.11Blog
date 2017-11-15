@@ -1,0 +1,60 @@
+*{
+    margin: 0;padding: 0;text-decoration: none;list-style: none;
+}
+html body{
+    background: #F1F1F1;
+}
+.box{width: 403px;height: 575px;margin:40px auto;border: 1px solid #e7e7e7;background: #fff;position: relative;border-radius: 5px;box-shadow: 0 0 20px 1px #ccc;border: 1px solid #f6f6f6}
+.text{width: 130px;margin:40px auto;height: 50px; display: flex;justify-content: space-between;}
+.login,.reg{width: 60px;height: 100%;border-bottom: 1px solid #fff;text-align: center;line-height: 50px;font-size: 20px;color: #9c9c9c;cursor: pointer;}
+
+.text>.login>a{border-bottom: 1px solid #EA6F5A;color: #EA6F5A;display: block;}
+.text>.login>a:hover{
+    color: #EA6F5A;display: block;list-style: none;text-decoration: none
+}
+.text>.reg>a{
+    color:  #9c9c9c;
+}
+.text>.reg>a:hover{
+    color: #9c9c9c;display: block;list-style: none;text-decoration: none
+}
+.logindo,.regdo{position: absolute;left:0;bottom:50px;width: 100%;height: 380px}
+.regdo{display: none;}
+form{width: 300px;height: 280px;margin: 0 auto;}
+.login1{width: 100%;border-radius: 30px;margin-top: 15px;outline: none;height: 40px;border: 0;}
+
+span{font-size: 12px;color: #CCCCCC}
+.input-group span{
+    background: #fff;border: none;
+}
+.input-group input{
+    background: #fff;border: 0;outline: none;box-shadow: none;
+}
+.input-group input:focus{
+    box-shadow: none;
+}
+.codeInput{
+    position: relative;
+}
+.imgCode{
+    position: absolute;top:0;right: 0;height: 54px;width: 100px;z-index: 10;
+}
+#img{
+    width: 100px;height: 54px; z-index: 999;cursor: pointer;
+}
+.input-group{
+    position: relative;
+}
+label{
+    position:absolute;top:8px;right: 0;z-index: 999;font-weight: 400;
+    color: red
+}
+body>h1{
+    position: absolute;top:20px;left:50px;
+}
+body>h1>a{
+    color: #E45E46;
+}
+body>h1>a:hover{
+    text-decoration: none;color:#E45E46;
+}

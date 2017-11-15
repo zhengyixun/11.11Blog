@@ -1,0 +1,299 @@
+{include file=$header}
+    <link rel="stylesheet" href="{CSS_URL}/header.css">
+    <link rel="stylesheet" href="{CSS_URL}/headerLogin.css">
+    <link rel="stylesheet" href="{CSS_URL}/car.css">
+    <link rel="stylesheet" href="{CSS_URL}/write.css">
+    <link rel="stylesheet" href="{ICONFONTS_URL}/iconfont.css">
+    <script src="{JS_URL}/jquery-hcheckbox.js"></script>
+    <script src="{JS_URL}/ownPage.js"></script>
+    <script src="{JS_URL}/car.js"></script>
+    <!--弹出框-->
+    <link rel="stylesheet" href="{CSS_URL}/remodal.css">
+    <link rel="stylesheet" href="{CSS_URL}/remodal-default-theme.css">
+    <script src="{JS_URL}/remodal.js"></script>
+<main>
+    <div class="headBox"></div>
+    <h4>我的购物车</h4>
+    <div class="list">
+        <ul>
+            <li class="say">
+                <div class="imgBox1 iconfont icon-quanbufenlei"></div>
+                <span>查看订单</span>
+            </li>
+            <li class="edit">
+                <div class="imgBox1 iconfont icon-iconshezhi01"></div>
+                <span>编辑订单</span>
+            </li>
+            <li class="del">
+                <div class="imgBox1 iconfont icon-remen"></div>
+                <span><a href="#modal">清空订单</a></span>
+                <!--清空的弹出框-->
+                <div class="remodal" data-remodal-id="modal" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc">
+                    <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+                    <div>
+                        <h2 id="modal1Title">确定清空购物车？</h2>
+                        <p id="modal1Desc">
+                            是否确定清空购物车
+                        </p>
+                    </div>
+                    <br>
+                    <button data-remodal-action="cancel" class="remodal-cancel">考虑一下</button>
+                    <button data-remodal-action="confirm" class="remodal-confirm">确认</button>
+                </div>
+                <!-- -->
+            </li>
+            <li class="money">
+                <div class="imgBox1 iconfont icon-qianbao"></div>
+                <span>我的账户</span>
+            </li>
+        </ul>
+    </div>
+    <!--购物车详情-->
+    <div class="rightCon" style="display: block">
+        <div class="rightConSon" id="chklist">
+            <div class="con">
+                <!--选择框-->
+                <input type="checkbox" value='1' style="display: none" />
+                <label style="display: none"></label>
+                <div class="conTop">
+                    <div class="conTopImg"><img src="{IMG_URL}/header.jpg" alt=""></div>
+                    <span>Rose的肉丝儿</span>
+                    <span>4分钟前</span>
+                </div>
+                <h3><a href="">远行·西藏 | 想写一封信，告诉你我来到了世界的尽头</a></h3>
+                <div class="conMid">
+                    <p>这一天的主题注定和赶路有关。 从拉萨去纳木措，开车需五个小时。整整一天，我们都将在路上度过。 早上九点，我们在布达拉宫的西广场上车，能在夕阳落山前赶到。有两个人迟到了，趁这个...</p>
+                </div>
+                <div class="otherCategory">
+                    <a href="">
+                        旅行 在路上
+                    </a>
+                </div>
+                <!--小icon-->
+                <div class="iconfonts">
+                    <img src="{IMG_URL}/eyey.png" alt="">
+                    <span>21</span>
+                </div>
+                <div class="iconfonts">
+                    <img src="{IMG_URL}/info.png" alt="">
+                    <span>211</span>
+                </div>
+                <div class="iconfonts">
+                    <img src="{IMG_URL}/love.png" alt="">
+                    <span>21</span>
+                </div>
+                <div class="iconfonts">
+                    <img src="{IMG_URL}/mon.png" alt="">
+                    <span>1</span>
+                </div>
+                <!--右侧缩略图-->
+                <div class="rightImg">
+                    <img src="{IMG_URL}/header.jpg" alt="">
+                </div>
+            </div>
+            <div class="con">
+                <!--选择框-->
+                <input type="checkbox" value='2' style="display: none" />
+                <label style="display: none"></label>
+                <div class="conTop">
+                    <div class="conTopImg"><img src="{IMG_URL}/header.jpg" alt=""></div>
+                    <span>Rose的肉丝儿</span>
+                    <span>4分钟前</span>
+                </div>
+                <h3><a href="">远行·西藏 | 想写一封信，告诉你我来到了世界的尽头</a></h3>
+                <div class="conMid">
+                    <p>这一天的主题注定和赶路有关。 从拉萨去纳木措，开车需五个小时。整整一天，我们都将在路上度过。 早上九点，我们在布达拉宫的西广场上车，能在夕阳落山前赶到。有两个人迟到了，趁这个...</p>
+                </div>
+                <div class="otherCategory">
+                    <a href="">
+                        旅行 在路上
+                    </a>
+                </div>
+                <!--小icon-->
+                <div class="iconfonts">
+                    <img src="{IMG_URL}/eyey.png" alt="">
+                    <span>21</span>
+                </div>
+                <div class="iconfonts">
+                    <img src="{IMG_URL}/info.png" alt="">
+                    <span>211</span>
+                </div>
+                <div class="iconfonts">
+                    <img src="{IMG_URL}/love.png" alt="">
+                    <span>21</span>
+                </div>
+                <div class="iconfonts">
+                    <img src="{IMG_URL}/mon.png" alt="">
+                    <span>1</span>
+                </div>
+                <!--右侧缩略图-->
+                <div class="rightImg">
+                    <img src="{IMG_URL}/header.jpg" alt="">
+                </div>
+            </div>
+            <div class="con">
+                <!--选择框-->
+                <input type="checkbox" value='3' style="display: none" />
+                <label style="display: none"></label>
+                <div class="conTop">
+                    <div class="conTopImg"><img src="{IMG_URL}/header.jpg" alt=""></div>
+                    <span>Rose的肉丝儿</span>
+                    <span>4分钟前</span>
+                </div>
+                <h3><a href="">远行·西藏 | 想写一封信，告诉你我来到了世界的尽头</a></h3>
+                <div class="conMid">
+                    <p>这一天的主题注定和赶路有关。 从拉萨去纳木措，开车需五个小时。整整一天，我们都将在路上度过。 早上九点，我们在布达拉宫的西广场上车，能在夕阳落山前赶到。有两个人迟到了，趁这个...</p>
+                </div>
+                <div class="otherCategory">
+                    <a href="">
+                        旅行 在路上
+                    </a>
+                </div>
+                <!--小icon-->
+                <div class="iconfonts">
+                    <img src="{IMG_URL}/eyey.png" alt="">
+                    <span>21</span>
+                </div>
+                <div class="iconfonts">
+                    <img src="{IMG_URL}/info.png" alt="">
+                    <span>211</span>
+                </div>
+                <div class="iconfonts">
+                    <img src="{IMG_URL}/love.png" alt="">
+                    <span>21</span>
+                </div>
+                <div class="iconfonts">
+                    <img src="{IMG_URL}/mon.png" alt="">
+                    <span>1</span>
+                </div>
+                <!--右侧缩略图-->
+                <div class="rightImg">
+                    <img src="{IMG_URL}/header.jpg" alt="">
+                </div>
+            </div>
+            <div class="con">
+                <!--选择框-->
+                <input type="checkbox" value='3' style="display: none" />
+                <label style="display: none"></label>
+                <div class="conTop">
+                    <div class="conTopImg"><img src="{IMG_URL}/header.jpg" alt=""></div>
+                    <span>Rose的肉丝儿</span>
+                    <span>4分钟前</span>
+                </div>
+                <h3><a href="">远行·西藏 | 想写一封信，告诉你我来到了世界的尽头</a></h3>
+                <div class="conMid">
+                    <p>这一天的主题注定和赶路有关。 从拉萨去纳木措，开车需五个小时。整整一天，我们都将在路上度过。 早上九点，我们在布达拉宫的西广场上车，能在夕阳落山前赶到。有两个人迟到了，趁这个...</p>
+                </div>
+                <div class="otherCategory">
+                    <a href="">
+                        旅行 在路上
+                    </a>
+                </div>
+                <!--小icon-->
+                <div class="iconfonts">
+                    <img src="{IMG_URL}/eyey.png" alt="">
+                    <span>21</span>
+                </div>
+                <div class="iconfonts">
+                    <img src="{IMG_URL}/info.png" alt="">
+                    <span>211</span>
+                </div>
+                <div class="iconfonts">
+                    <img src="{IMG_URL}/love.png" alt="">
+                    <span>21</span>
+                </div>
+                <div class="iconfonts">
+                    <img src="{IMG_URL}/mon.png" alt="">
+                    <span>1</span>
+                </div>
+                <!--右侧缩略图-->
+                <div class="rightImg">
+                    <img src="{IMG_URL}/header.jpg" alt="">
+                </div>
+            </div>
+            <div class="con">
+                <!--选择框-->
+                <input type="checkbox" value='3' style="display: none" />
+                <label style="display: none"></label>
+                <div class="conTop">
+                    <div class="conTopImg"><img src="{IMG_URL}/header.jpg" alt=""></div>
+                    <span>Rose的肉丝儿</span>
+                    <span>4分钟前</span>
+                </div>
+                <h3><a href="">远行·西藏 | 想写一封信，告诉你我来到了世界的尽头</a></h3>
+                <div class="conMid">
+                    <p>这一天的主题注定和赶路有关。 从拉萨去纳木措，开车需五个小时。整整一天，我们都将在路上度过。 早上九点，我们在布达拉宫的西广场上车，能在夕阳落山前赶到。有两个人迟到了，趁这个...</p>
+                </div>
+                <div class="otherCategory">
+                    <a href="">
+                        旅行 在路上
+                    </a>
+                </div>
+                <!--小icon-->
+                <div class="iconfonts">
+                    <img src="{IMG_URL}/eyey.png" alt="">
+                    <span>21</span>
+                </div>
+                <div class="iconfonts">
+                    <img src="{IMG_URL}/info.png" alt="">
+                    <span>211</span>
+                </div>
+                <div class="iconfonts">
+                    <img src="{IMG_URL}/love.png" alt="">
+                    <span>21</span>
+                </div>
+                <div class="iconfonts">
+                    <img src="{IMG_URL}/mon.png" alt="">
+                    <span>1</span>
+                </div>
+                <!--右侧缩略图-->
+                <div class="rightImg">
+                    <img src="{IMG_URL}/header.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <input type="button" value="全 部 结 算" style="display: none" id="btnOK" class="btn btn-success" />
+    </div>
+    <!--我的账户-->
+    <div class="wallet" style="display: none">
+        <div class="myWallet">
+            <div class="myWalletLeft">
+                <img src="{IMG_URL}/header%20(5).jpg" alt="">
+                <h4>韩大爷的杂货铺</h4>
+                <h5>*请先绑定手机号</h5>
+            </div>
+            <div class="myWalletRight">
+                <span>账户余额</span>
+                <span class="yuan"><b>10000</b>元</span>
+                <div class="recharge"><a href="javascript:;">充值</a></div>
+                <div class="recharge tixian"><a href="javascript:;">提现</a></div>
+            </div>
+        </div>
+        <!--表格-->
+        <table class="table table-striped">
+            <tr>
+                <td>时间</td>
+                <td>类型</td>
+                <td>详情</td>
+                <td>金额</td>
+                <td>状态</td>
+            </tr>
+            <tr>
+                <td>2017-10-25 22:01</td>
+                <td>赞赏</td>
+                <td>向 风飘絮语 的文章送了 2 颗糖</td>
+                <td>-￥2.00</td>
+                <td>未支付</td>
+            </tr>
+            <tr>
+                <td>2017-10-25 21:52</td>
+                <td>充值</td>
+                <td> </td>
+                <td> </td>
+                <td>未支付</td>
+            </tr>
+        </table>
+    </div>
+</main>
+</body>
+</html>

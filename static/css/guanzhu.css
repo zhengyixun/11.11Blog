@@ -1,0 +1,42 @@
+header>.do>a{
+    list-style: none;text-decoration: none;color: #EA6F5A;
+}
+iframe{
+    width: 290px;height: 580px;position: fixed;left:183px;top:80px;
+}
+.guanzhuRight{
+    width: 680px;height: auto;float: right;margin-top: 30px;
+}
+.guanzhuRightSon{
+    width: 100%;height: 180px;border-bottom: 1px solid #F0F0F0;box-sizing: border-box;position: relative;
+}
+.guanzhuRightSonTop{
+    height: 35px;width: 100%;
+}
+.guanzhuRightSonTop>img{
+    width: 35px;height: 35px;border-radius: 50%;float: left;margin-right: 15px;
+}
+.guanzhuRightSonTop>span{
+    color: #333;float: left;display: block;margin-top: 7px;
+}
+.guanzhuRightSonTop>.loveText{
+    color: #B09696;margin-left: 10px;
+}
+.guanzhuRightSon>h4{
+    color: #333;font-weight: 400;
+}
+.guanzhuRightSon>h4>a{
+    list-style: none;text-decoration: none;color: #333;
+}
+.guanzhuRightSon>p{
+    display: block;width: 470px;
+}
+.iconfont{
+    float: left;color: #969696;margin-right: 5px;margin-left: 5px;
+}
+.guanzhuRightSon>h6{
+    color: #6A9AD1;float: left;margin-top: 6px;
+}
+.rightImg{
+    display: block;position: absolute;top:30px;right: 0;width: 150px;height: 120px;border-radius: 5px;
+}

@@ -1,0 +1,10 @@
+
+.btn-success{
+    margin: 30px 0;position: fixed;top:50px;left:120px;
+}
+.do>a{
+    color: #EA6F5A;
+}
+.do>a:hover{
+    color: #EA6F5A;text-decoration: none;
+}

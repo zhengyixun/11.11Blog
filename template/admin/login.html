@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="{JS_URL}/jquery-3.2.1.js"></script>
+    <script src="{JS_URL}/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="{CSS_URL}/bootstrap.min.css">
+    <link rel="stylesheet" href="{CSS_URL}/login.css">
+    <title>login</title>
+</head>
+<body>
+<h1><a href="index.php">Blog</a></h1>
+<div class="box">
+    <div class="text">
+        <div class="login"><a href="index.php?m=admin&f=login&a=init">登录</a></div>
+        <div class="reg"><a href="index.php?m=admin&f=login&a=reg">注册</a></div>
+    </div>
+    <!--登录-->
+    <div class="logindo">
+        <form action="index.php?m=admin&f=login&a=check" method="post">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="input-group">
+                        <span class="input-group-addon glyphicon glyphicon-user" id="basic-addon1"></span>
+                        <input type="text" class="form-control" placeholder="请输入账号" name="aname" aria-describedby="basic-addon1" autocomplete="off">
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="input-group">
+                        <span class="input-group-addon glyphicon glyphicon-lock"></span>
+                        <input type="password" class="form-control" name="apass" placeholder="请输入密码" aria-describedby="basic-addon1" autocomplete="off">
+                    </div>
+                </li>
+                <li class="list-group-item codeInput">
+                    <div class="input-group">
+                        <span class="input-group-addon glyphicon glyphicon-leaf"></span>
+                        <input type="text" class="form-control" name="acode" placeholder="请输入验证码" aria-describedby="basic-addon1" autocomplete="off">
+                    </div>
+                    <div class="imgCode">
+                        <img id="img" src="index.php?m=admin&f=login&a=imgCode" onclick="this.src='index.php?m=admin&f=login&a=imgCode'" alt="">
+                    </div>
+                </li>
+            </ul>
+            <input type="checkbox"> 记住我
+            <button type="submit" class="btn btn-default btn-info login1">登录</button>
+        </form>
+    </div>
+</div>
+</body>
+<script>
+    $(function(){
+        $('form').validate({
+            rules:{
+                aname: {
+                    required: true,
+                    minlength: 2
+                },
+                apass: {
+                    required: true,
+                    minlength: 6
+                },
+            },
+            messages:{
+                aname: {
+                    required: '请输入用户名',
+                    minlength: '长度不得小于2位'
+                },
+                apass: {
+                    required: '请输入密码',
+                    minlength: '长度不得小于6位'
+                },
+            },
+        })
+
+    })
+</script>
+</html>

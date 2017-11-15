@@ -1,0 +1,24 @@
+
+    <div class="commentConTop">
+        <div class="commentConTopImg">
+            <img src="{IMG_URL}/header.jpg" alt="">
+        </div>
+        <h4>{$username}</h4>
+        <h5>5楼 2017.10.23 08:54</h5>
+    </div>
+    <!--评论内容-->
+    <h5 style="display: block;width: 100%;height: auto;margin-top: 10px">{$mcon}</h5>
+    <div class="hits">
+        <button type="button" class="btn btn-default btn-sm rbtn">回复</button>
+    </div>
+    <!--添加新的评论-->
+    <div class="replayList">
+
+        <!--添加新评论-->
+        <button type="button" class="rbtn" style="border: none;background: #fff;outline: none;margin-top:20px;">添加新评论</button>
+        <div class="inp">
+            <textarea name="" id="" cols="30" rows="10" class="tjCon"></textarea><br>
+            <button type="button" class="btn btn-default btn-sm tj" uid="{$uid1}">提交</button>
+            <button type="button" class="btn btn-default btn-sm cancels">取消</button>
+        </div>
+    </div>

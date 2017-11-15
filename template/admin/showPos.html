@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{CSS_URL}/bootstrap.css">
+    <script src="{JS_URL}/jquery-3.2.1.js"></script>
+
+    <title>showPos</title>
+</head>
+<style>
+    .container{
+        margin-top: 30px;
+    }
+    th,td{
+        text-align: center;
+    }
+</style>
+<body>
+<div class="container">
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>id</th>
+            <th>分类名称</th>
+            <th>操作</th>
+        </tr>
+        {foreach $result as $v}
+        <tr>
+            <td>{$v['pid']}</td>
+            <td class="pname" pid="{$v['pid']}">{$v['pname']}</td>
+            <td>
+                <a href="index.php?m=admin&f=cate&a=delPos&pid={$v['pid']}" class="btn btn-danger btn-sm">删除</a>
+            </td>
+        </tr>
+        {/foreach}
+    </table>
+</div>
+</body>
+</html>
+<script src="{JS_URL}/showPos.js"></script>

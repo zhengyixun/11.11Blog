@@ -1,0 +1,73 @@
+{include file=$header}
+    <link rel="stylesheet" href="{CSS_URL}/categoryCon.css">
+    <link rel="stylesheet" href="{CSS_URL}/header.css">
+<main>
+    <div class="headBox"></div>
+    <div class="title">
+        <div class="titleImg"><img src="{IMG_URL}/iconfont/zhuzhuangtu.png" alt=""></div>
+        <span>{$result1['cname']}</span>
+    </div>
+    <!--分类页开始-->
+    {foreach $result2 as $v2}
+    <div class="con">
+        <div class="conTop">
+            <div class="conTopImg"><img src="{$v2['thumb']}" alt=""></div>
+            <span class="titles">{$v2['uname']}</span>
+            <span>{$v2['condate']}</span>
+        </div>
+        <h3><a href="index.php?m=index&f=index&a=blogCon&cid={$v2['cid']}">{$v2['ctitle']}</a></h3>
+        <div class="conMid">
+            <p>{mb_substr($v2['ccon'],0,100,'utf-8')}...</p>
+        </div>
+        <div class="otherCategory">
+            <a href="">
+                旅行 在路上
+            </a>
+        </div>
+        <!--小icon-->
+        <div class="iconfont">
+            <img src="{IMG_URL}/eyey.png" alt="">
+            <span>21</span>
+        </div>
+        <div class="iconfont">
+            <img src="{IMG_URL}/info.png" alt="">
+            <span>211</span>
+        </div>
+        <div class="iconfont">
+            <img src="{IMG_URL}/love.png" alt="">
+            <span>21</span>
+        </div>
+        <div class="iconfont">
+            <img src="{IMG_URL}/mon.png" alt="">
+            <span>1</span>
+        </div>
+        <!--右侧缩略图-->
+        <div class="rightImg">
+            <img src="{IMG_URL}/header.jpg" alt="">
+        </div>
+    </div>
+    {/foreach}
+    <!--分类页结束-->
+    <!--推荐作者-->
+    <div class="hot">
+        <span>推荐作者</span>
+        {foreach $result as $v}
+        <div class="hotAuthor">
+            <div class="hotAuthorImg">
+                <img src="{$v['photo']}" alt="">
+            </div>
+            <span>{$v['uname']}</span>
+            <span class="guanzhu">+关注</span>
+            <h5>写了350k字 20.3k喜欢</h5>
+        </div>
+        {/foreach}
+
+        <!--authorAll页面-->
+        <div class="sayAll">
+            <a href="index.php?m=index&f=index&a=authorAll">查看全部</a>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

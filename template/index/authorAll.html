@@ -1,0 +1,34 @@
+{include file=$header}
+    <link rel="stylesheet" href="{CSS_URL}/header.css">
+    <link rel="stylesheet" href="{CSS_URL}/authorAll.css">
+<main>
+    <div class="headBox"></div>
+    <div class="title">
+        <img src="{IMG_URL}/iconfont/author.png" alt="">
+        <span>推荐作者</span>
+        <h4>如何成为签约作者</h4>
+    </div>
+    <div class="authorCon">
+        {foreach $result as $v}
+        <div class="authorInfo">
+            <div class="authorImg">
+                <img src="{$v['photo']}" alt="">
+            </div>
+            <h2>{$v['uname']}</h2>
+            <h6>发如雪，眼如鹰，心如镜</h6>
+            <h6>喜欢骑车就骑车喜欢吃面就吃面</h6>
+            <div class="gz"><a href="">+关注</a></div>
+            <div class="infoBot">
+                <div class="new">最新推出</div>
+                <h5>天青色等烟雨，而我在等你</h5>
+                <h5>年年至日长为客，忽忽穷愁泥杀人</h5>
+                <h5>总得有人去擦亮星星，它们看起来灰蒙蒙</h5>
+            </div>
+        </div>
+        {/foreach}
+    </div>
+
+    <div class="sayMore">加载更多</div>
+</main>
+</body>
+</html>

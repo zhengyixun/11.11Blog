@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>失败信息</title>
+    <link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/dpl.css" rel="stylesheet">
+    <link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/bui.css" rel="stylesheet">
+</head>
+<style>
+    .row{
+        width: 390px;height: 96px;margin: 260px auto;
+    }
+</style>
+<body>
+<div class="demo-content">
+    <div class="doc-content">
+        <div class="row">
+            <div class="span10">
+                <div class="tips tips-large tips-warning">
+                    <span class="x-icon x-icon-error">×</span>
+                    <div class="tips-content">
+                        <h2>{$errorinfo}</h2>
+                        <p class="auxiliary-text"><b class="span">3</b>秒后自动返回，<a href="{$uppage}">立即返回</a></p>
+                        <p>
+                            <a class="direct-lnk" title="返回首页" href="index.php">返回首页</a>
+                            <a class="direct-lnk" title="返回上一页" href="{$uppage}">返回上一页</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+window.onload=function() {
+    var time = 3;
+    setInterval(function () {
+        time--;
+        if (time < 0) {
+            location.href = "{$uppage}";
+        } else {
+            document.querySelector('.span').innerText = time;
+        }
+    }, 1000);
+    setTimeout(function(){
+        location.href = "{$uppage}";
+    },3000)
+}
+</script>
+</html>

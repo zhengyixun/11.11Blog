@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="{JS_URL}/jquery-3.2.1.js"></script>
+    <script src="{JS_URL}/jquery.validate.min.js"></script>
+    <script src="{JS_URL}/reg.js"></script>
+    <link rel="stylesheet" href="{CSS_URL}/bootstrap.min.css">
+    <link rel="stylesheet" href="{CSS_URL}/reg.css">
+    <title>reg</title>
+</head>
+<body>
+<h1><a href="index.php">Blog</a></h1>
+<div class="box">
+    <div class="text">
+        <div class="login"><a href="index.php?m=admin&f=login&a=init">登录</a></div>
+        <div class="reg"><a href="index.php?m=admin&f=login&a=reg">注册</a></div>
+    </div>
+    <!--登录-->
+    <div class="logindo">
+        <form action="">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="input-group">
+                        <span class="input-group-addon glyphicon glyphicon-user" id="basic-addon1"></span>
+                        <input type="text" class="form-control" placeholder="请输入账号" name="uname" aria-describedby="basic-addon1" autocomplete="off">
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="input-group">
+                        <span class="input-group-addon glyphicon glyphicon-lock"></span>
+                        <input type="password" class="form-control" name="upass" placeholder="请输入密码" aria-describedby="basic-addon1" autocomplete="off">
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="input-group fclick">
+                        <span class="input-group-addon glyphicon glyphicon-phone"></span>
+                        <input type="text" class="form-control" name="uphone" placeholder="请输入手机号" aria-describedby="basic-addon1" autocomplete="off">
+                        <button class="click">点击发送验证码</button>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="input-group">
+                        <span class="input-group-addon glyphicon glyphicon-envelope"></span>
+                        <input type="password" class="form-control" name="aphonecode" placeholder="请输入您收到的验证码" aria-describedby="basic-addon1" autocomplete="off">
+                    </div>
+                </li>
+                <li class="list-group-item codeInput">
+                    <div class="input-group">
+                        <span class="input-group-addon glyphicon glyphicon-leaf"></span>
+                        <input type="password" class="form-control" name="ucode" placeholder="请输入验证码" aria-describedby="basic-addon1" autocomplete="off">
+                    </div>
+                    <div class="imgCode">
+                        <img id="img" src="index.php?m=admin&f=login&a=imgCode" onclick="this.src='index.php?m=admin&f=login&a=imgCode'" alt="">
+                    </div>
+                </li>
+            </ul>
+            <button type="submit" class="btn btn-default btn-info login1">注 册</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

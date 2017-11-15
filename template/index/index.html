@@ -1,0 +1,97 @@
+{include file=$header}
+    <link rel="stylesheet" href="{CSS_URL}/index.css">
+    <script src="{JS_URL}/jquery-1.7.1.min.js"></script>
+    <script src="{JS_URL}/jquery.slider.js"></script>
+<main>
+<div class="headBox"></div>
+    <div class="banner slider">
+        <div class="imgBox"><a href="#"><img style="width: 1000px;height: 300px" src="{IMG_URL}/dt1.jpg" alt=""></a></div>
+        <div class="imgBox"><a href="#"><img style="width: 1000px;height: 300px" src="{IMG_URL}/dt3.jpg" alt=""></a></div>
+        <div class="imgBox"><a href="#"><img style="width: 1000px;height: 300px" src="{IMG_URL}/dt4.jpg" alt=""></a></div>
+        <div class="imgBox"><a href="#"><img style="width: 1000px;height: 300px" src="{IMG_URL}/dt5.jpg" alt=""></a></div>
+    </div>
+    <!--推荐位-->
+
+    <div class="category">
+        {foreach $result as $v}
+        <div class="cSon">
+            <a href="index.php?m=index&f=index&a=positions&posid={$v['pid']}" style="display: block;width: 100%;height: 100%">
+                <!--背景图片-->
+                <div class="cSonImg"><img src="{$v['pthumb']}" alt=""></div>
+                <!--文字-->
+                <span>{$v['pname']}</span>
+            </a>
+        </div>
+       {/foreach}
+    </div>
+    <!--推荐位结束-->
+    <!--文章展示开始-->
+    {foreach $result2 as $v2}
+    <div class="text">
+        <div class="textTop">
+            <div class="textTopImg">
+                <img src="{$v2['photo']}" alt="">
+            </div>
+            <span>{$v2['uname']}</span>
+            <span>10小时以前</span>
+        </div>
+        <div class="textMid">
+            <h4><a href="index.php?m=index&f=index&a=blogCon&cid={$v2['cid']}">{$v2['ctitle']}</a></h4>
+            <p>{mb_substr($v2['ccon'],0,100,"utf-8")}</p>
+        </div>
+        <div class="textBot">
+            <div class="textCate">心理</div>
+            <div class="textBotImg">
+                <img src="{IMG_URL}/eyey.png" alt="">
+            </div>
+            <span>30</span>
+
+            <div class="textBotImg">
+                <img src="{IMG_URL}/info.png" alt="">
+            </div>
+            <span>300</span>
+
+            <div class="textBotImg">
+                <img src="{IMG_URL}/love.png" alt="">
+            </div>
+            <span>30</span>
+        </div>
+        <div class="pic">
+            <img src="{$v2['thumb']}" alt="">
+        </div>
+    </div>
+    {/foreach}
+    <!--文章展示结束-->
+    <!--分类-->
+    <div class="list">
+        {foreach $result1 as $v1}
+        <div class="listSon">
+            <a href="index.php?m=index&f=index&a=categoryCon&cid={$v1['cid']}">
+                <span>{$v1['cname']}</span>
+            </a>
+            <div class="imgPng">
+                <img src="{$v1['cimage']}" style="width: 90px;height: 50px">
+            </div>
+        </div>
+        {/foreach}
+        <div class="down">
+           <div class="downImg">
+               <img src="{IMG_URL}/down.jpg" alt="">
+           </div>
+            <h5>下载APP></h5>
+            <h6>随时随地发现和创作内容</h6>
+        </div>
+        <div class="listSon say">查看更多</div>
+    </div>
+</main>
+</body>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $(".slider").slideshow({
+            width: 1000,
+            height: 300,
+            transition: ['bar', 'Rain', 'square', 'squareRandom', 'explode']
+        });
+    });
+</script>
+</html>

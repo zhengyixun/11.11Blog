@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>EasyUI Demo</title>
+    <link rel="stylesheet" type="text/css" href="{CSS_URL}/easyui.css">
+    <link rel="stylesheet" type="text/css" href="{CSS_URL}/icon.css">
+    <script type="text/javascript" src="{JS_URL}/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="{JS_URL}/jquery.easyui.min.js"></script>
+</head>
+<body>
+<div style="margin:20px 0;">
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="edit()">编 辑</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="save()">保 存</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="cancel()">取 消</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="Delete()">删 除</a>
+</div>
+<table id="tg" class="easyui-treegrid" title="分类" style="width:700px;height:250px"
+       data-options="
+				iconCls: 'icon-ok',
+				rownumbers: true,
+				animate: true,
+				collapsible: true,
+				fitColumns: true,
+				url: 'index.php?m=admin&f=cate&a=seeCateCon',
+				method: 'get',
+				idField: 'id',
+				treeField: 'cname',
+				showFooter: true
+			">
+    <thead>
+    <tr>
+        <th data-options="field:'cname',width:100,editor:'text'">分类名称</th>
+        <th data-options="field:'cinfo',width:100,align:'left',editor:'text'">分类描述</th>
+    </tr>
+    </thead>
+</table>
+<script type="text/javascript">
+    function formatProgress(value){
+        if (value){
+            var s = '<div style="width:100%;border:1px solid #ccc">' +
+                '<div style="width:' + value + '%;background:#cc0000;color:#fff">' + value + '%' + '</div>'
+            '</div>';
+            return s;
+        } else {
+            return '';
+        }
+    }
+    var editingId;
+
+    $("#tg").treegrid({
+        'onAfterEdit':function(a,b){
+            var obj={};
+            obj.cid=editingId;
+            //循环
+            for(var i in b){
+                obj.field=i;
+                obj.val=b[i];
+            }
+            $.ajax({
+                url:"index.php?m=admin&f=cate&a=editCon",
+                data:obj,
+                type:"post",
+                success:function(e){
+                    if(e=="ok"){
+                        alert("更新成功");
+                    }else if(e=="no"){
+                        alert("没有更新");
+                    }
+                }
+            });
+            editingId=undefined;
+        }
+    });
+
+
+    function edit(){
+        if (editingId != undefined){
+            $('#tg').treegrid('select', editingId);
+            return;
+        }
+        var row = $('#tg').treegrid('getSelected');
+        if (row){
+            editingId = row.id;
+            $('#tg').treegrid('beginEdit', editingId);
+        }
+
+    }
+    function save(){
+        if (editingId != undefined){
+            var t = $('#tg');
+            t.treegrid('endEdit', editingId);
+            editingId = undefined;
+        }
+    }
+    function cancel(){
+        if (editingId != undefined){
+            $('#tg').treegrid('cancelEdit', editingId);
+            editingId = undefined;
+        }
+    }
+    function Delete(){
+        if (editingId != undefined){
+            $('#tg').treegrid('select', editingId);
+            return;
+        }
+        var row = $('#tg').treegrid('getSelected');
+        if (row){
+            editingId = row.id;
+//            alert(editingId);
+            $('#tg').treegrid('remove', editingId);
+            $.ajax({
+                url:"index.php?m=admin&f=cate&a=delCon",
+                type:"post",
+                data:{ "cid":editingId },
+                success:function(e){
+                    if(e=="ok"){
+                        alert("删除成功");
+                    }
+                }
+            })
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+a:hover{
+    text-decoration: none;
+}
+.list{
+    position: fixed;left:180px;top:110px;width: 280px;min-height: 300px;
+}
+.list>ul{width: 100%;height: 100%}
+.list>ul>li{
+    width: 242px;height: 34px;border-radius: 5px;padding: 10px 15px;cursor: pointer;
+}
+.imgBox1{
+    width: 30px;height: 30px;background: #A0A0A0;border-radius: 5px;padding: 10px;float: left;
+}
+.list>ul>li>span{
+    float: left;margin-left: 20px;color: #2F2F2F;margin-top: 5px;font-size: 16px;
+}
+.list>ul>li:hover{
+    background: #F0F0F0;
+}
+.list>ul>li{
+    height: 50px;width: 100%;
+}
+main>h4{
+    position: fixed;left:220px;top:75px;
+}
+.list>ul>li>.iconfont{
+    padding: 0;
+}
+.list>ul>li>.imgBox1{
+    text-align: center;line-height: 30px;color: #fff;font-size: 20px;
+}
+.rightCon{
+    width: 700px;min-height: 50px;float: right;margin-top: 35px;border-top: 1px solid #f0f0f0;
+}
+/*购物车*/
+.con{
+    width: 650px;height: 220px;border-bottom: 1px solid #F0F0F0;position: relative;margin: 0 auto;
+}
+.con>input,.con>label{
+    position: absolute;top:90px;left: -50px;
+}
+.conTop{
+    width: 100%;height: 50px;margin-bottom: 5px;
+}
+.conTopImg{
+    width: 35px;height: 35px;border-radius: 50%;border: 1px solid #9f9c99;margin-top: 10px;margin-right: 10px;float: left;
+}
+.conTopImg img{
+    width: 100%;height: 100%;border-radius: 50%;
+}
+.conTop span{
+    color: #B4B4B4;float: left;display: block;margin-top: 18px;margin-right: 10px;
+}
+.con h3{
+    display: block;margin-top: 0px;
+}
+.con h3 a{
+    font-weight: 400;color: #333;font-size: 20px;
+}
+.conMid{
+    width: 460px;height: 70px;margin-top: 5px;
+}
+.conMid p{
+    font-weight: 400;font-size: 13px;color: #333;line-height: 25px;
+}
+.otherCategory{
+    width: auto;height: auto;padding: 0 5px;padding-bottom:2px;border: 1px solid #ED7C6E;box-sizing: border-box;border-radius: 5px;float: left;margin-top: 10px;
+}
+.otherCategory a{
+    color: #ED7C6E;font-size: 13px;
+}
+.iconfonts{
+    float: left;width: auto;overflow: hidden;height: auto;margin-top: 15px;
+}
+.iconfonts img{
+    width: 18px;height: 18px;float: left;margin-left: 10px;
+}
+.iconfonts span{
+    color: #9f9c99;margin-left: 5px;font-size: 12px;display: block;float: left;
+}
+.rightImg{
+    position: absolute;top:50px;right: 0;width: 150px;height: 120px;
+}
+.rightImg img{
+    width: 100%;height: 100%;border-radius: 5px;
+}
+.del>span>a{
+    color: #333;list-style: none;text-decoration: none;
+}
+#btnOK{
+    margin: 50px 50px;float: left;
+}
+/*钱包页面*/
+.wallet{
+    position: absolute;top: 85px;right: 0;width: 700px;height: auto;
+}
+.myWallet{
+    width: 100%;height: 130px;
+}
+.myWalletLeft{
+    width: 280px;height: 100%;border-right: 1px solid #f0f0f0;box-sizing: border-box;float: left;
+}
+.myWalletLeft img{
+    width: 80px;height: 80px;border-radius: 50%;float: left;margin-top: 24px;
+}
+.myWalletLeft h4{
+    float: left;margin-top: 50px;display: block;margin-left: 20px;font-weight: 600;
+}
+.myWalletLeft h5{
+    float: left;margin-left: 20px;display: block;margin-top: -5px;
+}
+.myWalletRight{
+    float: left;width: 340px;height: 100%;padding-left: 80px;
+}
+.myWalletRight span{
+    color: #969696;float: left;font-weight: 400;font-size: 16px;display: block;margin-right: 15px;margin-top: 30px;
+}
+.myWalletRight span b{
+    color: #333;
+}
+.yuan{
+    width: 150px;
+}
+.recharge{
+    width: 100px;height: 35px;border-radius: 20px;text-align: center;
+    line-height: 35px;float: left;background: #42C02E;margin-right: 20px;margin-top: 20px;
+}
+.recharge a{
+    color: #fff;
+}
+.tixian{
+    background: #fff;border: 1px solid #A3E19A;
+}
+.tixian a{
+    color: #A3E19A;
+}
+.table{
+    margin-top: 45px;text-align: center;
+}
+.table > tbody > tr > td{
+    padding: 15px 0;
+}
+/*选择框的css*/
+label.checkbox {padding-left: 24px; cursor:pointer;background: url(../img/checkbox.png) no-repeat left -21px; line-height:22px; height:21px; display:inline-block; }
+label.checked {background-position:left 100%;  }
+label.disabled{background-position:left 0;}
+
+.hRadio{
+    padding-left: 22px; display: inline-block;
+    background: transparent url(../img/radio.png) no-repeat left top;
+    height: 19px; line-height:20px;
+    cursor:pointer;vertical-align:middle;
+}
+.hRadio_Checked { background-position: left bottom;}

@@ -1,0 +1,43 @@
+{include file=$header}
+<link rel="stylesheet" href="{CSS_URL}/header.css">
+<link rel="stylesheet" href="{CSS_URL}/blogCon.css">
+<script src="{JS_URL}/jquery-3.2.1.js"></script>
+<script src="{JS_URL}/blogCon.js"></script>
+<main cid="{$result['cid']}" uid2="{$result['uid']}" uid1="{$uid1}" username="{$username}">
+    <div class="headBox"></div>
+    <h1>{$result['ctitle']}</h1>
+    <div class="author">
+        <div class="authorImg">
+            <img src="{$result['thumb']}" alt="">
+        </div>
+        <h4>{$uname}</h4>
+        <div class="atte">
+            {if !$uname}
+            <a href="javascript:;" class="guanzhu" style="display: block;">+关注</a>
+            <a href="javascript:;" class="cancel" style="display: none;background: grey">取消关注</a>
+            {else}
+                {if $flag!=0}
+            <a href="javascript:;" class="guanzhu" style="display: none;">+关注</a>
+            <a href="javascript:;" class="cancel" style="display: block;background: grey">取消关注</a>
+                {else}
+            <a href="javascript:;" class="guanzhu" style="display: block;">+关注</a>
+            <a href="javascript:;" class="cancel" style="display: none;background: grey">取消关注</a>
+                {/if}
+            {/if}
+        </div>
+        <h5>{$result['condate']} 字数 3336 阅读 {$dj['hnum']} 评论 62 喜欢 81 赞赏 4</h5>
+    </div>
+    <div class="textCon">
+        <p>{$result['ccon']}</p>﻿﻿
+    </div>
+    <!--填写评论-->
+    <div class="mess">
+        <textarea name="" id="" cols="30" rows="10" placeholder="请填写您的评论" class="myCon"></textarea>
+        <button type="button" class="btn btn-default myConBtn" style="float: right;margin: 10px 0">提交</button>
+    </div>
+    <!--评论comment 在新的页面-->
+    {include file=$comment}
+
+</main>
+</body>
+</html>
